@@ -30,6 +30,7 @@ form div {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  row-gap: 20px;
 }
 label {
   text-align: left;
@@ -41,7 +42,7 @@ label {
 input,
 select {
   border: 1px solid #010101;
-  height: 50px;
+  height: 35px;
   width: 80%;
   font-size: 1.5rem;
   box-sizing: border-box;
