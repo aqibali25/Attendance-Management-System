@@ -15,22 +15,6 @@ function logout() {
   sessionStorage.removeItem("user");
   window.location.href = "login.html";
 }
-function login() {
-  var username = document.getElementById("username").value;
-  var password = document.getElementById("password").value;
-
-  // Check if the user exists in local storage
-  var existingUsers = JSON.parse(localStorage.getItem("users")) || [];
-  var user = existingUsers.find(function (user) {
-    return user.username === username && user.password === password;
-  });
-  if (user) {
-    sessionStorage.setItem("user", JSON.stringify(user));
-    window.location.href = "index.html";
-  } else {
-    alert("Invalid username or password. Please try again.");
-  }
-}
 var dropdown = document.getElementById("dropdown");
 
 function show() {

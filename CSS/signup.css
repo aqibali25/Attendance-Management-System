@@ -5,37 +5,26 @@ body {
   background-color: #2e3339;
   font-family: Verdana;
 }
-body > label {
-  position: absolute;
-  top: 10px;
-  right: 110px;
-  font-weight: 550;
-}
-body #toggle {
-  position: absolute;
-  top: 15px;
-  right: 65px;
-  color: #787d8b;
-  cursor: pointer;
-}
-body #toggle-text {
-  position: absolute;
-  top: 10px;
-  right: 30px;
-  font-weight: 550;
-}
 form {
   position: relative;
   display: flex;
   flex-direction: column;
-  row-gap: 10px;
+  row-gap: 20px;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
+  margin-top: 20px;
   margin-left: 25px;
   margin-right: 25px;
   height: fit-content;
   width: fit-content;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+form h1 {
+  color: #9da1ab;
+  width: 200%;
+  text-align: center;
 }
 form div {
   position: relative;
@@ -43,8 +32,10 @@ form div {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
-form div input {
+form div input,
+select {
   height: 54px;
   width: 90%;
   padding-left: 20px;
@@ -56,33 +47,33 @@ form div input {
   outline: none;
   font-size: 20px;
   color: #9da1ab;
+  appearance: none;
 }
+
 div input::placeholder {
   color: #9da1ab;
 }
 div input {
   background-color: #4d505f;
 }
-form div i {
+form div label {
   background-color: #393b41;
+  width: 45%;
+  height: 56px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: #787d8b;
   border: none;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
-  padding: 20px;
   margin-top: 15px;
-}
-form #eye,
-#eye1 {
-  background-color: #3c404b;
-  position: absolute;
-  left: 90%;
-  padding: 0;
-  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.9rem;
 }
 button {
   height: 50px;
-  width: 100%;
+  width: 50%;
   margin-top: 20px;
   border: none;
   border-radius: 5px;
@@ -90,6 +81,17 @@ button {
   color: #ffffff;
   font-size: 18px;
   cursor: pointer;
+}
+div:nth-last-child(1) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 200%;
+}
+div:nth-last-child(1) label {
+  background-color: transparent;
+  width: 100%;
 }
 label {
   margin-top: 10px;
@@ -103,9 +105,22 @@ label a {
 a:hover {
   text-decoration: underline;
 }
-#notmatch {
-  position: absolute;
-  top: 55px;
-  color: red;
-  font-size: 17px;
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.6);
+}
+/* Styles for screens wider than or equal to 768px */
+@media screen and (max-width: 768px) {
+  form {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  form h1 {
+    width: 100%;
+  }
+  div:nth-last-child(1) {
+    width: 100%;
+  }
 }

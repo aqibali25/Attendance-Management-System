@@ -13,8 +13,10 @@
   </head>
   <body>
     <form action="" id="signupForm" onsubmit="signup()">
+      <h1>Welcome to Ezitech Institute Registration Page 🚀</h1>
+      <br />
       <div>
-        <i class="fa fa-user"></i>
+        <label for="username">Name</label>
         <input
           type="text"
           class="username"
@@ -26,58 +28,119 @@
         />
       </div>
       <div>
-        <i class="fa fa-lock"></i>
-        <input
-          type="password"
-          class="password"
-          name="password"
-          id="password"
-          placeholder="Password"
-          autocomplete="off"
-          required
-        />
-        <i class="fa-solid fas fa-eye-slash" id="eye"></i>
-      </div>
-      <div id="confirmpasswordDiv">
-        <i class="fa fa-lock" id="icon"></i>
-        <input
-          type="password"
-          class="confirmpassword"
-          name="confirmpassword"
-          id="confirmpassword"
-          placeholder="Confirm Password"
-          autocomplete="off"
-          required
-        />
-        <i class="fa-solid fas fa-eye-slash" id="eye1"></i>
-        <p id="notmatch"></p>
-      </div>
-      <div>
-        <i class="fa-solid fa-envelope"></i>
+        <label for="email">Email</label>
         <input
           type="email"
           class="email"
           id="email"
           name="email"
-          placeholder="Email"
+          placeholder="abc@gmail.com"
           autocomplete="off"
+          pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
           required
         />
       </div>
       <div>
-        <i class="fa fas fa-phone"></i>
+        <label for="number" class="title">Number</label>
+
         <input
-          type="number"
+          type="tel"
           class="number"
           id="number"
           name="number"
           placeholder="Phone Number"
           autocomplete="off"
+          pattern="(\+92|0)\d{10}"
           required
         />
       </div>
-      <button id="submit">SIGN UP</button>
-      <label>Already a Member? <a href="login.html">Sign in</a></label>
+      <div>
+        <label for="CNIC" class="title">CNIC</label>
+        <input
+          type="number"
+          class="CNIC"
+          name="CNIC"
+          id="CNIC"
+          placeholder="CNIC"
+          autocomplete="off"
+          pattern="\d{5}-\d{7}-\d"
+          required
+        />
+      </div>
+
+      <div>
+        <!-- <i class="fa-solid fa-calendar-days"></i> -->
+        <label for="joinDate" class="title">Join Date</label>
+        <input
+          type="date"
+          class="joinDate"
+          name="joinDate"
+          id="joinDate"
+          placeholder="Join Date"
+          autocomplete="off"
+          required
+        />
+      </div>
+      <div>
+        <label for="">Latest Degree</label>
+        <input
+          type="text"
+          class="latestdegree"
+          name="latestdegree"
+          id="latestdegree"
+          placeholder="Latest Degree"
+          autocomplete="off"
+          required
+        />
+      </div>
+      <div>
+        <label for="technology">Technology</label>
+        <select name="technology" id="technology" class="technology">
+          <option value="">-- Select--</option>
+          <option value="">Graphic Designing</option>
+          <option value="">Web Development</option>
+          <option value="">SEO</option>
+          <option value="">Python</option>
+          <option value="">MERN Stack</option>
+          <option value="">SQA Engnieer</option>
+          <option value="">Project Management</option>
+          <option value="">Fluter Development</option>
+          <option value="">WordPress</option>
+          <option value="">Web Development</option>
+        </select>
+      </div>
+      <div>
+        <label for="duration">Duration</label>
+        <select name="duration" id="duration" class="duration">
+          <option value="">-- Select--</option>
+          <option value="">1 Month</option>
+          <option value="">2 Month</option>
+          <option value="">3 Month</option>
+        </select>
+      </div>
+      <div>
+        <label for="gender">Gender</label>
+        <select name="gender" id="gender" class="gender">
+          <option value="">-- Select--</option>
+          <option value="">Male</option>
+          <option value="">Female</option>
+          <option value="">Other</option>
+        </select>
+      </div>
+      <div>
+        <label for="profile-pic">Profile Picture</label>
+        <input
+          type="file"
+          name="profile-pic"
+          id="profile-pic"
+          class="profile-pic"
+        />
+      </div>
+      <div>
+        <button id="submit">SIGN UP</button>
+
+        <label>Already a Member? <a href="login.html">Sign in</a></label>
+      </div>
     </form>
   </body>
   <script src="JS/signup.js"></script>

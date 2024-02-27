@@ -29,3 +29,18 @@ function checkLoginStatus() {
     window.location.href = "index.html";
   }
 }
+function login() {
+  var username = document.getElementById("username").value;
+  var password = document.getElementById("password").value;
+
+  var user = {
+    username: username,
+    password: password,
+  };
+  if (user) {
+    sessionStorage.setItem("user", JSON.stringify(user));
+    window.location.href = "index.html";
+  } else {
+    alert("Invalid username or password. Please try again.");
+  }
+}
