@@ -14,7 +14,7 @@ icon.addEventListener("click", function showpassword() {
   }
 });
 window.addEventListener("load", function () {
-  document.getElementById("username").focus();
+  document.getElementById("email").focus();
 });
 if (
   window.location.href.includes("login.html") ||
@@ -29,18 +29,19 @@ function checkLoginStatus() {
     window.location.href = "index.html";
   }
 }
-function login() {
-  var username = document.getElementById("username").value;
+document.getElementById("loginForm").addEventListener("submit", function (e) {
+  var email = document.getElementById("email").value;
   var password = document.getElementById("password").value;
 
   var user = {
-    username: username,
+    email: email,
     password: password,
   };
-  if (user) {
+  if (email === "aqib@gmail.com" && password === "123") {
     sessionStorage.setItem("user", JSON.stringify(user));
     window.location.href = "index.html";
   } else {
-    alert("Invalid username or password. Please try again.");
+    alert("Invalid email or password. Please try again.");
+    e.preventDefault();
   }
-}
+});

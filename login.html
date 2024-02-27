@@ -26,6 +26,7 @@
           id="email"
           placeholder="Email"
           autocomplete="off"
+          pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
           required
         />
       </div>
@@ -43,7 +44,7 @@
       <div class="forgot">
         <a href="#" id="forgotpassword">Forgot Password?</a>
       </div>
-      <button type="button" onclick="login()">SIGN IN</button>
+      <button type="submit">SIGN IN</button>
       <label>Not a Member? <a href="signup.html">Register</a></label>
     </form>
   </body>
