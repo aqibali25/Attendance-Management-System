@@ -3,73 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="CSS/signup.css" />
-    <title>Registration</title>
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
   </head>
   <body>
-    <form>
-      <h1>Registration</h1>
-      <br />
-      <div>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required />
+    <div class="navbar">
+      <div class="menu-btn" id="menu-btn">
+        <i class="fas fa-bars fa-2x"></i>
       </div>
-      <div>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required />
+      <div class="close" id="close">
+        <i class="fa-solid fa-x"></i>
       </div>
-      <div>
-        <label for="cell">Cell:</label>
-        <input type="tel" id="cell" name="cell" pattern="[0-9]{10}" required />
+      <div class="navLinks" id="navLinks">
+        <span id="test"></span>
+        <a href="#">Home</a>
+        <a href="#">Services</a>
+        <a href="#">Blog</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
       </div>
-      <div>
-        <label for="join_date">Join Date:</label>
-        <input type="date" id="join_date" name="join_date" required />
+      <div class="profile">
+        <img src="assets/profile.jpg" alt="Profile" onclick="show()" />
+        <div class="dropdown-content" id="dropdown">
+          <a href="#">Settings</a>
+          <a href="#">Terms</a>
+          <a href="#" id="logout" onclick="logout()">Logout</a>
+        </div>
       </div>
-      <div>
-        <label for="cnic">CNIC:</label>
-        <input type="text" id="cnic" name="cnic" pattern="[0-9]{13}" required />
-      </div>
-      <div>
-        <label for="birth_date">Birth Date:</label>
-        <input type="date" id="birth_date" name="birth_date" required />
-      </div>
-      <div>
-        <label for="university">University:</label>
-        <input type="text" id="university" name="university" required />
-      </div>
-      <div>
-        <label for="degree">Latest Degree:</label>
-        <input type="text" id="degree" name="degree" required />
-      </div>
-      <div>
-        <label for="technology">Technology:</label>
-        <input type="text" id="technology" name="technology" required />
-      </div>
-      <div>
-        <label for="duration">Duration:</label>
-        <input type="number" id="duration" name="duration" required />
-      </div>
-      <div>
-        <label for="gender">Gender:</label>
-        <select id="gender" name="gender" required>
-          <option value="male">Male</option>
-          <option value="female">Female</option>
-          <option value="other">Other</option>
-        </select>
-      </div>
-      <div>
-        <label for="profile_picture">Profile Picture:</label>
-        <input
-          type="file"
-          id="profile_picture"
-          name="profile_picture"
-          accept="image/*"
-        />
-      </div>
-      <div>
-        <button type="submit">Sign Up</button>
-      </div>
-    </form>
+    </div>
+    <script src="JS/script.js"></script>
   </body>
 </html>
