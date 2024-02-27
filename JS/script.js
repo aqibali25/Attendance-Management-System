@@ -1,4 +1,9 @@
-if (window.location.href.includes("index.html")) {
+if (
+  window.location.href.includes("index.html") ||
+  window.location.href.includes(
+    "https://aqibali25.github.io/ezitech-intern-test/"
+  )
+) {
   checkLoginStatus();
 }
 function checkLoginStatus() {
