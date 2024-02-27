@@ -1,10 +1,6 @@
-if (
-  window.location.href.includes("index.html") ||
-  window.location.href.includes("index")
-) {
+if (window.location.href.includes("index.html")) {
   checkLoginStatus();
 }
-
 function checkLoginStatus() {
   const isLoggedIn = sessionStorage.getItem("user");
   if (!isLoggedIn) {
