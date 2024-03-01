@@ -2,27 +2,25 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #2e3339;
+  background-color: #cdcdcd;
   font-family: Verdana;
 }
 form {
   position: relative;
+  top: 50px;
   display: flex;
   flex-direction: column;
-  row-gap: 20px;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
-  margin-left: 25px;
-  margin-right: 25px;
-  height: fit-content;
-  width: fit-content;
+  height: 5%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+  width: 65%;
+  padding: 0 50px;
 }
 form h1 {
-  color: #9da1ab;
+  font-size: 1.5rem;
+  color: #303030;
   width: 200%;
   text-align: center;
 }
@@ -32,21 +30,22 @@ form div {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 95%;
+  height: 60%;
 }
 form div input,
 select {
-  height: 54px;
-  width: 90%;
+  height: 115%;
+  width: 80%;
   padding-left: 20px;
   margin-top: 15px;
   border: none;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
-  background-color: #3c404b;
+  background-color: #ffffff;
   outline: none;
   font-size: 20px;
-  color: #9da1ab;
+  color: #787d8b;
   appearance: none;
 }
 
@@ -54,17 +53,14 @@ div input::placeholder {
   color: #9da1ab;
   font-size: 17px;
 }
-div input {
-  background-color: #4d505f;
-}
 form div label {
-  background-color: #393b41;
+  background-color: #a6a5a5;
   width: 45%;
-  height: 56px;
+  height: 45px;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #787d8b;
+  color: #424141;
   border: none;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
@@ -72,15 +68,18 @@ form div label {
   font-size: 20px;
 }
 button {
-  height: 50px;
-  width: 50%;
+  height: 55px;
+  width: 30%;
   margin-top: 20px;
   border: none;
   border-radius: 5px;
-  background-color: #270bbf;
+  background-color: #5b40f6;
   color: #ffffff;
   font-size: 18px;
   cursor: pointer;
+}
+button:hover {
+  background-color: #6d54f9;
 }
 div:nth-last-child(1) {
   display: flex;
@@ -88,10 +87,10 @@ div:nth-last-child(1) {
   align-items: center;
   flex-direction: column;
   width: 200%;
+  height: 100%;
 }
 div:nth-last-child(1) label {
   background-color: transparent;
-  width: 100%;
 }
 label {
   margin-top: 10px;
@@ -99,7 +98,7 @@ label {
   letter-spacing: -1px;
 }
 label a {
-  color: #ffffff;
+  color: #111111;
   text-decoration: none;
 }
 a:hover {
@@ -121,6 +120,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     width: 100%;
   }
   div:nth-last-child(1) {
-    width: 100%;
+    width: 110%;
   }
 }
