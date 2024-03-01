@@ -2,7 +2,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #cdcdcd;
+  background-color: #e6e6e6;
   font-family: Verdana;
 }
 
@@ -34,15 +34,17 @@ form div input {
   border: none;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
-  background-color: #ffffff;
+  background-color: #f0f0f0;
   outline: none;
   font-size: 20px;
   color: #787d8b;
 }
+input:focus {
+  background-color: #ffffff;
+}
 form div i {
-  background-color: #a6a5a5;
+  background-color: #c2c2c2;
   color: #424141;
-  border-right: 1px solid #787d8b;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   padding: 20px;
