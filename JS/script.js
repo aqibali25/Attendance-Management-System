@@ -1,17 +1,17 @@
-// if (
-//   window.location.href.includes("index.html") ||
-//   window.location.href === "https://aqibali25.github.io/ezitech-intern-test/" ||
-//   window.location.href ===
-//     "https://aqibali25.github.io/ezitech-intern-test/index"
-// ) {
-//   checkLoginStatus();
-// }
-// function checkLoginStatus() {
-//   const isLoggedIn = sessionStorage.getItem("user");
-//   if (!isLoggedIn) {
-//     window.location.href = "login.html";
-//   }
-// }
+if (
+  window.location.href.includes("index.html") ||
+  window.location.href === "https://aqibali25.github.io/ezitech-intern-test/" ||
+  window.location.href ===
+    "https://aqibali25.github.io/ezitech-intern-test/index"
+) {
+  checkLoginStatus();
+}
+function checkLoginStatus() {
+  const isLoggedIn = sessionStorage.getItem("user");
+  if (!isLoggedIn) {
+    window.location.href = "login.html";
+  }
+}
 function logout() {
   sessionStorage.removeItem("user");
   window.location.href = "login.html";
