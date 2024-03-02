@@ -10,30 +10,35 @@
     />
   </head>
   <body>
-    <div class="navbar">
-      <div class="menu-btn" id="menu-btn">
-        <i class="fas fa-bars fa-2x"></i>
-      </div>
-      <div class="close" id="close">
-        <i class="fa-solid fa-x"></i>
-      </div>
-      <div class="navLinks" id="navLinks">
-        <span id="test"></span>
-        <a href="#">Home</a>
-        <a href="#">Services</a>
-        <a href="#">Blog</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-      </div>
+    <nav class="navbar">
       <div class="profile">
+        <div class="nameTitle">
+          <label for="name">Aqib Ali Kalwar</label>
+          <label for="title">intern</label>
+        </div>
         <img src="assets/profile.jpg" alt="Profile" onclick="show()" />
+        <span class="onlineDot"></span>
         <div class="dropdown-content" id="dropdown">
           <a href="#">Settings</a>
-          <a href="#">Terms</a>
           <a href="#" id="logout" onclick="logout()">Logout</a>
         </div>
       </div>
-    </div>
+    </nav>
+    <aside class="sideBar">
+      <img src="assets/logo.png" alt="Logo" />
+      <div class="active" id="active" onclick="addClass(this)">
+        <i class="far fa-check-circle"></i>
+        <label for="Present">Present</label>
+      </div>
+      <div class="" id="active" onclick="addClass(this)">
+        <i class="fa-solid fa-circle-minus"></i>
+        <label for="Leave">Leave</label>
+      </div>
+      <div class="" id="active" onclick="addClass(this)">
+        <i class="far fa-eye"></i>
+        <label for="View">View</label>
+      </div>
+    </aside>
     <script src="JS/script.js"></script>
   </body>
 </html>
