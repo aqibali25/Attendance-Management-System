@@ -256,6 +256,7 @@ h1 {
   display: block;
 }
 .menu-btn i {
+  display: none;
   color: #111111;
   margin-left: 20px;
   font-size: 30px;
