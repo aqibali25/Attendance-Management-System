@@ -10,35 +10,63 @@
     />
   </head>
   <body>
-    <nav class="navbar">
-      <div class="profile">
-        <div class="nameTitle">
-          <label for="name">Aqib Ali Kalwar</label>
-          <label for="title">intern</label>
+    <div>
+      <nav class="navbar">
+        <div class="profile">
+          <div class="nameTitle">
+            <label for="name">Aqib Ali Kalwar</label>
+            <label for="title">intern</label>
+          </div>
+          <img src="assets/profile.jpg" alt="Profile" onclick="show()" />
+          <span class="onlineDot"></span>
+          <div class="dropdown-content" id="dropdown">
+            <a href="#" id="Profile" onclick="toggleUpdateProfile()">Profile</a>
+            <a href="#" id="logout" onclick="logout()">Logout</a>
+          </div>
         </div>
-        <img src="assets/profile.jpg" alt="Profile" onclick="show()" />
-        <span class="onlineDot"></span>
-        <div class="dropdown-content" id="dropdown">
-          <a href="#">Settings</a>
-          <a href="#" id="logout" onclick="logout()">Logout</a>
+      </nav>
+      <aside class="sideBar">
+        <img src="assets/logo.png" alt="Logo" />
+        <div class="active" id="active" onclick="addClass(this)">
+          <i class="far fa-check-circle"></i>
+          <label for="Present">Present</label>
         </div>
-      </div>
-    </nav>
-    <aside class="sideBar">
-      <img src="assets/logo.png" alt="Logo" />
-      <div class="active" id="active" onclick="addClass(this)">
-        <i class="far fa-check-circle"></i>
-        <label for="Present">Present</label>
-      </div>
-      <div class="" id="active" onclick="addClass(this)">
-        <i class="fa-solid fa-circle-minus"></i>
-        <label for="Leave">Leave</label>
-      </div>
-      <div class="" id="active" onclick="addClass(this)">
-        <i class="far fa-eye"></i>
-        <label for="View">View</label>
-      </div>
-    </aside>
+        <div class="" id="active" onclick="addClass(this)">
+          <i class="fa-solid fa-circle-minus"></i>
+          <label for="Leave">Leave</label>
+        </div>
+        <div class="" id="active" onclick="addClass(this)">
+          <i class="far fa-eye"></i>
+          <label for="View">View</label>
+        </div>
+      </aside>
+      <main>
+        <div class="updateProfile" id="updateProfile">
+          <h1>Profile</h1>
+          <form>
+            <label for="email">Email address:</label><br />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value="aqib@gmail.com"
+              readonly
+            /><br />
+            <label for="name">Name:</label><br />
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value="AQIB ALI KALWAR"
+              readonly
+            /><br />
+            <label for="profile-image">Profile Image:</label><br />
+            <input type="file" id="profile-image" name="profile-image" /><br />
+            <input type="submit" value="Submit" />
+          </form>
+        </div>
+      </main>
+    </div>
     <script src="JS/script.js"></script>
   </body>
 </html>

@@ -44,12 +44,15 @@ menuBtn.addEventListener("click", function () {
   navLinks.style.left = "0";
 });
 function addClass(element) {
-  // Remove "active" class from all divs
   var allDivs = document.querySelectorAll(".sideBar div");
   allDivs.forEach(function (div) {
     div.classList.remove("active");
   });
 
-  // Add "active" class to the clicked div
   element.classList.add("active");
+}
+
+function toggleUpdateProfile() {
+  var updateProfile = document.getElementById("updateProfile");
+  updateProfile.classList.toggle("show");
 }

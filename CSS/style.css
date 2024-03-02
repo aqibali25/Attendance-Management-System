@@ -120,6 +120,7 @@ body {
 }
 .active {
   background-color: #675bef;
+  box-shadow: 3px 3px 5px #675bef55, -3px -3px 5px #675bef55;
   color: #ffffff;
 }
 .sideBar div label,
@@ -130,4 +131,72 @@ div i {
 }
 .sideBar div i {
   margin-left: 60px;
+}
+.updateProfile {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30%;
+  height: fit-content;
+  margin: 2rem auto;
+  padding: 20px 0;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+.inactive {
+  opacity: 0.5;
+}
+.show {
+  display: flex;
+  opacity: 1;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+form label {
+  display: block;
+  margin-bottom: -0.6rem;
+  font-weight: bold;
+}
+
+form input[type="email"],
+form input[type="text"],
+form input[type="password"],
+form input[type="file"] {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form input[type="email"]:focus,
+form input[type="text"]:focus,
+form input[type="password"]:focus {
+  outline: none;
+  box-shadow: 0 0 2px 1px #4caf50;
+}
+
+form input[type="submit"] {
+  cursor: pointer;
+  background-color: #4caf50;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+form input[type="submit"]:hover {
+  background-color: #45a049;
 }
