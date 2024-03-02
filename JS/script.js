@@ -1,17 +1,17 @@
-if (
-  window.location.href.includes("index.html") ||
-  window.location.href === "https://aqibali25.github.io/ezitech-intern-test/" ||
-  window.location.href ===
-    "https://aqibali25.github.io/ezitech-intern-test/index"
-) {
-  checkLoginStatus();
-}
-function checkLoginStatus() {
-  const isLoggedIn = sessionStorage.getItem("user");
-  if (!isLoggedIn) {
-    window.location.href = "login.html";
-  }
-}
+// if (
+//   window.location.href.includes("index.html") ||
+//   window.location.href === "https://aqibali25.github.io/ezitech-intern-test/" ||
+//   window.location.href ===
+//     "https://aqibali25.github.io/ezitech-intern-test/index"
+// ) {
+//   checkLoginStatus();
+// }
+// function checkLoginStatus() {
+//   const isLoggedIn = sessionStorage.getItem("user");
+//   if (!isLoggedIn) {
+//     window.location.href = "login.html";
+//   }
+// }
 function logout() {
   sessionStorage.removeItem("user");
   window.location.href = "login.html";
@@ -29,30 +29,55 @@ function show() {
     dropdown.style.borderTopRightRadius = "30px";
   }
 }
-var menuBtn = document.getElementById("menu-btn");
-var closeBtn = document.getElementById("close");
-var navLinks = document.getElementById("navLinks");
+document.getElementById("menu-btn").addEventListener("click", function () {
+  const icon = document.querySelector(".menu-btn i");
+  const sideBar = document.getElementById("sideBar");
 
-closeBtn.addEventListener("click", function () {
-  this.style.left = "-100px";
-  menuBtn.style.left = "10px";
-  navLinks.style.left = "-100%";
+  icon.classList.toggle("fa-bars");
+  icon.classList.toggle("fa-times");
+  if (sideBar.style.left === "-20px") {
+    sideBar.style.left = "-150%";
+  } else {
+    sideBar.style.left = "-20px";
+  }
 });
-menuBtn.addEventListener("click", function () {
-  this.style.left = "-100px";
-  closeBtn.style.left = "15px";
-  navLinks.style.left = "0";
-});
-function addClass(element) {
-  var allDivs = document.querySelectorAll(".sideBar div");
-  allDivs.forEach(function (div) {
-    div.classList.remove("active");
-  });
+// function addClass(element) {
+//   var allDivs = document.querySelectorAll(".sideBar div");
+//   allDivs.forEach(function (div) {
+//     div.classList.remove("active");
+//   });
 
-  element.classList.add("active");
-}
+//   element.classList.add("active");
+// }
 
 function toggleUpdateProfile() {
   var updateProfile = document.getElementById("updateProfile");
   updateProfile.classList.toggle("show");
 }
+//   ##### Display Forms #####
+
+// Get all the necessary elements
+const present = document.getElementById("present");
+const leave = document.getElementById("leave");
+const view = document.getElementById("view");
+const presentForm = document.querySelector(".formContainer .presentForm");
+const leaveForm = document.querySelector(".formContainer .leaveForm");
+const viewTable = document.querySelector(".formContainer .viewTable");
+
+present.addEventListener("click", function () {
+  present.classList.add("active");
+  leave.classList.remove("active");
+  view.classList.remove("active");
+});
+
+leave.addEventListener("click", function () {
+  leave.classList.add("active");
+  present.classList.remove("active");
+  view.classList.remove("active");
+});
+
+view.addEventListener("click", function () {
+  view.classList.add("active");
+  leave.classList.remove("active");
+  present.classList.remove("active");
+});

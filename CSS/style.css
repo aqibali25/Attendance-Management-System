@@ -132,29 +132,39 @@ div i {
 .sideBar div i {
   margin-left: 60px;
 }
+main {
+  position: absolute;
+  bottom: 20px;
+  right: 55px;
+  width: 70%;
+  height: 78%;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  z-index: -9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .updateProfile {
   display: none;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 10px;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  width: 30%;
+  transform: translate(-70%, -50%);
+  gap: 10px;
+  width: fit-content;
   height: fit-content;
-  margin: 2rem auto;
-  padding: 20px 0;
+  padding: 30px;
   background-color: #f5f5f5;
   border: 1px solid #ddd;
   border-radius: 10px;
-}
-.inactive {
-  opacity: 0.5;
+  z-index: 1;
 }
 .show {
   display: flex;
-  opacity: 1;
 }
 
 h1 {
@@ -162,41 +172,143 @@ h1 {
   margin-bottom: 1rem;
 }
 
-form label {
+.updateProfileForm label {
   display: block;
   margin-bottom: -0.6rem;
   font-weight: bold;
 }
 
-form input[type="email"],
-form input[type="text"],
-form input[type="password"],
-form input[type="file"] {
+.updateProfileForm input {
   display: block;
-  width: 100%;
-  padding: 0.5rem;
-  margin-bottom: 1rem;
+  width: 90%;
+  padding: 10px;
+  margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
-form input[type="email"]:focus,
-form input[type="text"]:focus,
-form input[type="password"]:focus {
+.updateProfileForm input:focus,
+.PresentForm input:focus {
   outline: none;
-  box-shadow: 0 0 2px 1px #4caf50;
+  box-shadow: 0 0 2px 1px #584cdc;
 }
 
-form input[type="submit"] {
+.updateProfileForm input[type="submit"] {
   cursor: pointer;
-  background-color: #4caf50;
+  background-color: #584cdc;
   color: white;
-  padding: 0.5rem 1rem;
+  padding: 10px;
   border: none;
   border-radius: 4px;
-  font-size: 1rem;
+  font-size: 18px;
 }
 
-form input[type="submit"]:hover {
-  background-color: #45a049;
+.updateProfileForm input[type="submit"]:hover {
+  background-color: #675bef;
+}
+.formContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.PresentForm {
+  width: 90%;
+  height: 90%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.PresentForm div {
+  width: 90%;
+  height: fit-content;
+}
+.PresentForm div:last-child {
+  width: 190%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.PresentForm input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  outline: none;
+  border: 1px solid #cdcdcd;
+}
+
+.PresentForm button {
+  width: 50%;
+  padding: 10px;
+  background-color: #584cdc;
+  border: none;
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 1.2rem;
+  transition: all 0.5s ease;
+}
+.PresentForm button:hover {
+  background-color: #675bef;
+  box-shadow: 3px 3px 5px #675bef55, -3px -3px 5px #675bef55;
+}
+.menu-btn {
+  cursor: pointer;
+  display: block;
+}
+.menu-btn i {
+  color: #111111;
+  margin-left: 20px;
+  font-size: 30px;
+}
+@media screen and (max-width: 768px) {
+  .menu-btn {
+    display: block;
+    z-index: 1;
+  }
+  .sideBar {
+    position: absolute;
+    top: -20px;
+    left: -150%;
+    width: 100vw;
+    align-items: center;
+    border-radius: 0;
+    transition: all 0.8s ease;
+  }
+  .sideBar div {
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    margin: 0;
+    padding: 0;
+  }
+  .sideBar div i {
+    padding: 0;
+    margin: 0;
+  }
+  .navbar {
+    width: calc(100% - 40px);
+    margin: 20px;
+  }
+  main {
+    width: 95%;
+    height: 100%;
+    top: calc(80px + 40px);
+    left: 20px;
+    gap: 15px;
+  }
+  .PresentForm {
+    width: 80%;
+    height: 80%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 15px;
+  }
+  .PresentForm div:last-child {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 412px) {
+  main {
+    width: 90%;
+  }
 }
