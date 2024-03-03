@@ -1,17 +1,17 @@
-if (
-  window.location.href.includes("index.html") ||
-  window.location.href === "https://aqibali25.github.io/ezitech-intern-test/" ||
-  window.location.href ===
-    "https://aqibali25.github.io/ezitech-intern-test/index"
-) {
-  checkLoginStatus();
-}
-function checkLoginStatus() {
-  const isLoggedIn = sessionStorage.getItem("user");
-  if (!isLoggedIn) {
-    window.location.href = "login.html";
-  }
-}
+// if (
+//   window.location.href.includes("index.html") ||
+//   window.location.href === "https://aqibali25.github.io/ezitech-intern-test/" ||
+//   window.location.href ===
+//     "https://aqibali25.github.io/ezitech-intern-test/index"
+// ) {
+//   checkLoginStatus();
+// }
+// function checkLoginStatus() {
+//   const isLoggedIn = sessionStorage.getItem("user");
+//   if (!isLoggedIn) {
+//     window.location.href = "login.html";
+//   }
+// }
 function logout() {
   sessionStorage.removeItem("user");
   window.location.href = "login.html";
@@ -41,15 +41,6 @@ document.getElementById("menu-btn").addEventListener("click", function () {
     sideBar.style.left = "-20px";
   }
 });
-// function addClass(element) {
-//   var allDivs = document.querySelectorAll(".sideBar div");
-//   allDivs.forEach(function (div) {
-//     div.classList.remove("active");
-//   });
-
-//   element.classList.add("active");
-// }
-
 function toggleUpdateProfile() {
   var updateProfile = document.getElementById("updateProfile");
   updateProfile.classList.toggle("show");
