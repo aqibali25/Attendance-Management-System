@@ -147,7 +147,13 @@
             </div>
             <div>
               <label for="reason">REASON:</label>
-              <input type="text" id="reason" name="reason" required />
+              <input
+                type="text"
+                id="reason"
+                name="reason"
+                required
+                autocomplete="off"
+              />
             </div>
             <div>
               <label for="days">DAYS:</label>
@@ -165,9 +171,44 @@
           </form>
         </div>
         <div class="viewTableContainer">
-          <table action="" class="viewTable">
-            <h1>view</h1>
-          </table>
+          <label for="viewPresent" class="viewPresent viewShow" id="viewPresent"
+            >View Present</label
+          >
+          <label for="viewLeave" class="viewLeave" id="viewLeave"
+            >View Leave</label
+          >
+          <div class="presentTable" id="presentTable">
+            <table
+              id="viewTable"
+              class="viewPresentTable"
+              id="viewPresentTable"
+            >
+              <thead>
+                <tr>
+                  <th>DATE</th>
+                  <th>IN-TIME</th>
+                  <th>OFF-TIME</th>
+                  <th>HOURS WORKED</th>
+                  <th>WORK</th>
+                  <th>HOLIDAY REASON</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+          <div class="leaveTable" id="leaveTable">
+            <table id="viewTable" class="viewleaveTable" id="viewleaveTable">
+              <thead>
+                <tr>
+                  <th>FROM DATE</th>
+                  <th>TO DATE</th>
+                  <th>LEAVE REASON</th>
+                  <th>Days</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
         </div>
       </div>
     </main>

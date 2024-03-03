@@ -63,6 +63,7 @@ const view = document.getElementById("view");
 const presentFormContainer = document.querySelector(".presentFormContainer");
 const leaveFormContainer = document.querySelector(".leaveFormContainer");
 const viewTableContainer = document.querySelector(" .viewTableContainer");
+const main = document.querySelector("main");
 
 present.addEventListener("click", function () {
   present.classList.add("active");
@@ -71,6 +72,9 @@ present.addEventListener("click", function () {
   presentFormContainer.style.display = "flex";
   leaveFormContainer.style.display = "none";
   viewTableContainer.style.display = "none";
+  main.style.borderTopLeftRadius = "10px";
+  main.style.borderBottomRightRadius = "10px";
+  main.style.height = "77vh";
 });
 
 leave.addEventListener("click", function () {
@@ -80,6 +84,9 @@ leave.addEventListener("click", function () {
   presentFormContainer.style.display = "none";
   leaveFormContainer.style.display = "flex";
   viewTableContainer.style.display = "none";
+  main.style.borderTopLeftRadius = "10px";
+  main.style.borderBottomRightRadius = "10px";
+  main.style.height = "77vh";
 });
 
 view.addEventListener("click", function () {
@@ -89,6 +96,9 @@ view.addEventListener("click", function () {
   presentFormContainer.style.display = "none";
   leaveFormContainer.style.display = "none";
   viewTableContainer.style.display = "flex";
+  main.style.borderBottomLeftRadius = "0";
+  main.style.borderBottomRightRadius = "0";
+  main.style.height = "fit-content";
 });
 
 //Time Calculate for worked hours
@@ -148,3 +158,21 @@ function calculateDays() {
 
   document.getElementById("days").value = daysDifference;
 }
+
+const viewPresent = document.getElementById("viewPresent");
+const viewLeave = document.getElementById("viewLeave");
+const presentTable = document.getElementById("presentTable");
+const leaveTable = document.getElementById("leaveTable");
+
+viewPresent.addEventListener("click", function () {
+  this.classList.add("viewShow");
+  viewLeave.classList.remove("viewShow");
+  presentTable.style.display = "flex";
+  leaveTable.style.display = "none";
+});
+viewLeave.addEventListener("click", function () {
+  this.classList.add("viewShow");
+  viewPresent.classList.remove("viewShow");
+  presentTable.style.display = "none";
+  leaveTable.style.display = "flex";
+});

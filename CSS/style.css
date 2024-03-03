@@ -17,6 +17,7 @@ body {
   display: none;
   z-index: 2;
 }
+/* #### NAV BAR STYLE #### */
 .navbar {
   background-color: #f0f0f0;
   overflow: hidden;
@@ -101,6 +102,9 @@ body {
   background-color: #675bef;
   color: #ffffff;
 }
+
+/* #### SIDE BAR STYLE #### */
+
 .sideBar {
   width: 20%;
   height: 100vh;
@@ -140,10 +144,13 @@ div i {
   font-weight: 500;
   cursor: pointer;
 }
+/* #### MAIN STYLE #### */
+
 main {
   position: relative;
   width: 70%;
-  height: 78vh;
+  height: 77vh;
+  padding: 20px 0 0 0;
   overflow: hidden;
   float: right;
   right: 4%;
@@ -215,7 +222,8 @@ h1 {
   font-weight: bold;
 }
 
-.formContainer form input {
+.formContainer form input,
+.updateProfileForm input {
   display: block;
   width: 90%;
   padding: 10px;
@@ -297,6 +305,77 @@ h1 {
   margin-left: 20px;
   font-size: 30px;
 }
+
+/* ### VIEW TABLE STYLE ###  */
+.viewTableContainer {
+  height: 100%;
+  width: 100%;
+}
+.presentTable {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+.leaveTable {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+.viewTableContainer label {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.viewTableContainer .viewLeave {
+  left: 150px;
+  box-shadow: none;
+}
+.viewShow {
+  background-color: #584cdc;
+  box-shadow: 3px 3px 5px #584cdc55, -3px -3px 5px #584cdc55;
+  color: #ffffff;
+}
+table {
+  margin-top: 50px;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th,
+table td {
+  border: 1px solid #a5a5a5;
+  padding: 8px;
+  text-align: left;
+}
+
+table th {
+  background-color: #c2c2c2;
+  font-weight: 400;
+}
+
+table tr:nth-child(even) {
+  background-color: #c2c2c2;
+}
+
+table tr:hover {
+  background-color: #a5a5a5;
+}
+
+table td:last-child {
+  text-align: right;
+}
+tbody tr:nth-child(odd) th {
+  background-color: #e7e7e7;
+}
+tbody tr:nth-child(even) th {
+  background-color: #d9d8d8;
+}
+
+/* ### RESPONSIVE STYLING  ###  */
 @media screen and (max-width: 912px) {
   .navbar {
     width: 70%;
@@ -372,35 +451,46 @@ h1 {
         width: 90%;
         right: 5%;
 
-        padding: 20px 0;
+        padding: 20px 0 0 0;
         z-index: -2;
         margin-bottom: 20px;
       }
-      @media screen and (max-width: 425px) {
-        main {
-          width: 90%;
+      @media screen and (max-width: 500px) {
+        .presentTable table,
+        .leaveTable table {
+          display: block;
+          overflow-x: auto;
+          white-space: nowrap;
         }
-        .menu-btn {
-          margin-left: 10px;
+        .leaveTable table tbody th {
+          padding: 10px 20px;
         }
-        @media screen and (max-width: 320px) {
+        @media screen and (max-width: 425px) {
           main {
-            width: 86%;
-            right: 7%;
+            width: 90%;
           }
-          .nameTitle label:first-child {
-            font-size: 17px;
-            font-weight: 500;
+          .menu-btn {
+            margin-left: 10px;
           }
-          .nameTitle label:last-child {
-            font-size: 12px;
-          }
-          @media screen and (max-width: 280px) {
+          @media screen and (max-width: 320px) {
+            main {
+              width: 86%;
+              right: 7%;
+            }
             .nameTitle label:first-child {
-              font-size: 13px;
+              font-size: 17px;
+              font-weight: 500;
             }
             .nameTitle label:last-child {
-              font-size: 10px;
+              font-size: 12px;
+            }
+            @media screen and (max-width: 280px) {
+              .nameTitle label:first-child {
+                font-size: 13px;
+              }
+              .nameTitle label:last-child {
+                font-size: 10px;
+              }
             }
           }
         }
