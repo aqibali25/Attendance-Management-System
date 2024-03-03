@@ -41,9 +41,18 @@ document.getElementById("menu-btn").addEventListener("click", function () {
     sideBar.style.left = "-20px";
   }
 });
-function toggleUpdateProfile() {
+function showUpdateProfile() {
   var updateProfile = document.getElementById("updateProfile");
-  updateProfile.classList.toggle("show");
+  var bodyOpacity = document.getElementById("bodyOpacity");
+  updateProfile.style.display = "flex";
+  bodyOpacity.style.display = "block";
+}
+
+function hideUpdateProfile() {
+  var updateProfile = document.getElementById("updateProfile");
+  var bodyOpacity = document.getElementById("bodyOpacity");
+  updateProfile.style.display = "none";
+  bodyOpacity.style.display = "none";
 }
 //   ##### Display Forms #####
 
