@@ -139,3 +139,12 @@ window.onload = function () {
     document.getElementById("profile").src = profileImage;
   }
 };
+function calculateDays() {
+  var fromDate = new Date(document.getElementById("from-date").value);
+  var toDate = new Date(document.getElementById("to-date").value);
+
+  var timeDifference = toDate.getTime() - fromDate.getTime();
+  var daysDifference = timeDifference / (1000 * 3600 * 24);
+
+  document.getElementById("days").value = daysDifference;
+}

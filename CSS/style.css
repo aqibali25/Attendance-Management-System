@@ -125,7 +125,7 @@ body {
   align-items: center;
   gap: 10px;
   width: 80%;
-  height: 60px;
+  height: 50px;
   cursor: pointer;
   border-radius: 10px;
 }
@@ -209,13 +209,13 @@ h1 {
 .viewTableContainer {
   display: none;
 }
-.updateProfileForm label {
+.formContainer form label {
   display: block;
-  margin-bottom: -0.6rem;
+  margin-bottom: 10px;
   font-weight: bold;
 }
 
-.updateProfileForm input {
+.formContainer form input {
   display: block;
   width: 90%;
   padding: 10px;
@@ -225,7 +225,7 @@ h1 {
 }
 
 .updateProfileForm input:focus,
-.PresentForm input:focus {
+.formContainer form input:focus {
   outline: none;
   box-shadow: 0 0 2px 1px #584cdc;
 }
@@ -250,23 +250,23 @@ h1 {
   justify-content: center;
   align-items: center;
 }
-.PresentForm {
+.formContainer form {
   width: 90%;
   height: 90%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
-.PresentForm div {
+.formContainer form div {
   width: 90%;
   height: fit-content;
 }
-.PresentForm div:last-child {
+.formContainer form div:last-child {
   width: 190%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.PresentForm input {
+.formContainer form input {
   width: 100%;
   padding: 10px;
   border-radius: 4px;
@@ -274,7 +274,7 @@ h1 {
   border: 1px solid #cdcdcd;
 }
 
-.PresentForm button {
+.formContainer form button {
   width: 50%;
   padding: 10px;
   background-color: #584cdc;
@@ -284,7 +284,7 @@ h1 {
   font-size: 1.2rem;
   transition: all 0.5s ease;
 }
-.PresentForm button:hover {
+.formContainer form button:hover {
   background-color: #675bef;
   box-shadow: 3px 3px 5px #675bef55, -3px -3px 5px #675bef55;
 }
@@ -322,14 +322,14 @@ h1 {
     .sideBar img {
       height: 15%;
     }
-    .PresentForm {
+    .formContainer form {
       width: 80%;
       height: 80%;
       display: grid;
       grid-template-columns: repeat(1, 1fr);
       gap: 15px;
     }
-    .PresentForm div:last-child {
+    .formContainer form div:last-child {
       width: 100%;
     }
     main {
