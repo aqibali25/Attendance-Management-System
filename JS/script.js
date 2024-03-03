@@ -1,17 +1,17 @@
-if (
-  window.location.href.includes("index.html") ||
-  window.location.href === "https://aqibali25.github.io/ezitech-intern-test/" ||
-  window.location.href ===
-    "https://aqibali25.github.io/ezitech-intern-test/index"
-) {
-  checkLoginStatus();
-}
-function checkLoginStatus() {
-  const isLoggedIn = sessionStorage.getItem("user");
-  if (!isLoggedIn) {
-    window.location.href = "login.html";
-  }
-}
+// if (
+//   window.location.href.includes("index.html") ||
+//   window.location.href === "https://aqibali25.github.io/ezitech-intern-test/" ||
+//   window.location.href ===
+//     "https://aqibali25.github.io/ezitech-intern-test/index"
+// ) {
+//   checkLoginStatus();
+// }
+// function checkLoginStatus() {
+//   const isLoggedIn = sessionStorage.getItem("user");
+//   if (!isLoggedIn) {
+//     window.location.href = "login.html";
+//   }
+// }
 function logout() {
   sessionStorage.removeItem("user");
   window.location.href = "login.html";
@@ -108,3 +108,34 @@ function calculateTime() {
   document.getElementById("hours-worked").value = Math.floor(hoursWorked);
   document.getElementById("minutes-worked").value = Math.round(minutesWorked);
 }
+// #### Update Profile ####
+
+function updateProfile(event) {
+  event.preventDefault();
+
+  const fileInput = document.getElementById("profile-image");
+  const file = fileInput.files[0];
+
+  if (file) {
+    // Convert the file to a data URL
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      const imageDataURL = e.target.result;
+
+      localStorage.setItem("profileImage", imageDataURL);
+
+      document.getElementById("profile").src = imageDataURL;
+
+      hideUpdateProfile();
+    };
+
+    reader.readAsDataURL(file);
+  }
+}
+
+window.onload = function () {
+  const profileImage = localStorage.getItem("profileImage");
+  if (profileImage) {
+    document.getElementById("profile").src = profileImage;
+  }
+};
