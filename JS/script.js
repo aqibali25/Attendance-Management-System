@@ -176,3 +176,112 @@ viewLeave.addEventListener("click", function () {
   presentTable.style.display = "none";
   leaveTable.style.display = "flex";
 });
+
+// #### PRESENT FORM DATA IN TABLE ####
+
+const PresentForm = document.getElementById("PresentForm");
+const viewPresentTable = document.getElementById("viewPresentTable");
+const tbody = document.getElementById("tbody");
+
+function saveToLocalStorage(data) {
+  const existingData = JSON.parse(localStorage.getItem("presentData")) || [];
+
+  existingData.push(data);
+
+  localStorage.setItem("presentData", JSON.stringify(existingData));
+}
+
+function loadFromLocalStorage() {
+  const existingData = JSON.parse(localStorage.getItem("presentData")) || [];
+
+  existingData.forEach((rowData) => {
+    const newRow = document.createElement("tr");
+
+    rowData.forEach((value) => {
+      const cell = document.createElement("td");
+      cell.textContent = value;
+      newRow.appendChild(cell);
+    });
+
+    tbody.appendChild(newRow);
+  });
+}
+
+PresentForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  const formData = new FormData(PresentForm);
+  const values = Array.from(formData.values());
+  const newRow = document.createElement("tr");
+
+  values.forEach((value) => {
+    const cell = document.createElement("td");
+    cell.textContent = value;
+    newRow.appendChild(cell);
+  });
+
+  saveToLocalStorage(values);
+
+  tbody.appendChild(newRow);
+
+  PresentForm.reset();
+});
+
+window.addEventListener("load", loadFromLocalStorage);
+
+// #### LEAVE FORM DATA IN TABLE ###
+const leaveForm = document.querySelector(".leaveForm");
+const viewLeaveTable = document.querySelector(".viewleaveTable tbody");
+
+function saveDataToLocalStorage(data) {
+  const existingData = JSON.parse(localStorage.getItem("leaveData")) || [];
+  existingData.push(data);
+  localStorage.setItem("leaveData", JSON.stringify(existingData));
+}
+
+function getDataFromLocalStorageAndAppend() {
+  const storedData = JSON.parse(localStorage.getItem("leaveData")) || [];
+
+  storedData.forEach((data) => {
+    const newRow = viewLeaveTable.insertRow();
+
+    Object.values(data).forEach((value, index) => {
+      const cell = newRow.insertCell(index);
+      cell.textContent = value;
+    });
+  });
+}
+
+leaveForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  const fromDate = document.getElementById("from-date").value;
+  const toDate = document.getElementById("to-date").value;
+  const leaveReason = document.getElementById("reason").value;
+  const days = document.getElementById("days").value;
+
+  saveDataToLocalStorage({
+    fromDate,
+    toDate,
+    leaveReason,
+    days,
+  });
+
+  const newRow = viewLeaveTable.insertRow();
+
+  const dateCell = newRow.insertCell(0);
+  dateCell.textContent = fromDate;
+
+  const toDateCell = newRow.insertCell(1);
+  toDateCell.textContent = toDate;
+
+  const leaveReasonCell = newRow.insertCell(2);
+  leaveReasonCell.textContent = leaveReason;
+
+  const daysCell = newRow.insertCell(3);
+  daysCell.textContent = days;
+
+  leaveForm.reset();
+});
+
+getDataFromLocalStorageAndAppend();

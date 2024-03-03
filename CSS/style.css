@@ -349,30 +349,21 @@ table th,
 table td {
   border: 1px solid #a5a5a5;
   padding: 8px;
-  text-align: left;
+  text-align: center;
 }
 
 table th {
-  background-color: #c2c2c2;
+  border: 1px solid #6e6e6e;
+  background-color: #a6a6a6;
   font-weight: 400;
 }
 
 table tr:nth-child(even) {
-  background-color: #c2c2c2;
+  background-color: #d2d1d1;
 }
-
 table tr:hover {
-  background-color: #a5a5a5;
-}
-
-table td:last-child {
-  text-align: right;
-}
-tbody tr:nth-child(odd) th {
-  background-color: #e7e7e7;
-}
-tbody tr:nth-child(even) th {
-  background-color: #d9d8d8;
+  transition: all 0.5s ease;
+  background-color: #e2e2e2;
 }
 
 /* ### RESPONSIVE STYLING  ###  */
