@@ -54,30 +54,57 @@ function hideUpdateProfile() {
   updateProfile.style.display = "none";
   bodyOpacity.style.display = "none";
 }
-//   ##### Display Forms #####
 
-// Get all the necessary elements
+//    Display Forms
+
 const present = document.getElementById("present");
 const leave = document.getElementById("leave");
 const view = document.getElementById("view");
-const presentForm = document.querySelector(".formContainer .presentForm");
-const leaveForm = document.querySelector(".formContainer .leaveForm");
-const viewTable = document.querySelector(".formContainer .viewTable");
+const presentFormContainer = document.querySelector(".presentFormContainer");
+const leaveFormContainer = document.querySelector(".leaveFormContainer");
+const viewTableContainer = document.querySelector(" .viewTableContainer");
 
 present.addEventListener("click", function () {
   present.classList.add("active");
   leave.classList.remove("active");
   view.classList.remove("active");
+  presentFormContainer.style.display = "flex";
+  leaveFormContainer.style.display = "none";
+  viewTableContainer.style.display = "none";
 });
 
 leave.addEventListener("click", function () {
   leave.classList.add("active");
   present.classList.remove("active");
   view.classList.remove("active");
+  presentFormContainer.style.display = "none";
+  leaveFormContainer.style.display = "flex";
+  viewTableContainer.style.display = "none";
 });
 
 view.addEventListener("click", function () {
   view.classList.add("active");
   leave.classList.remove("active");
   present.classList.remove("active");
+  presentFormContainer.style.display = "none";
+  leaveFormContainer.style.display = "none";
+  viewTableContainer.style.display = "flex";
 });
+
+//Time Calculate for worked hours
+
+function calculateTime() {
+  var inTime = document.getElementById("in-time").value;
+  var offTime = document.getElementById("off-time").value;
+
+  var inTimeDate = new Date("1970-01-01T" + inTime);
+  var offTimeDate = new Date("1970-01-01T" + offTime);
+
+  var timeDifference = offTimeDate - inTimeDate;
+
+  var hoursWorked = timeDifference / (1000 * 60 * 60);
+  var minutesWorked = (hoursWorked % 1) * 60;
+
+  document.getElementById("hours-worked").value = Math.floor(hoursWorked);
+  document.getElementById("minutes-worked").value = Math.round(minutesWorked);
+}

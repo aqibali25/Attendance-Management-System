@@ -196,6 +196,19 @@ h1 {
   margin-bottom: 1rem;
 }
 
+.presentFormContainer,
+.leaveFormContainer,
+.viewTableContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.leaveFormContainer,
+.viewTableContainer {
+  display: none;
+}
 .updateProfileForm label {
   display: block;
   margin-bottom: -0.6rem;
@@ -292,7 +305,7 @@ h1 {
     width: 20%;
   }
   .sideBar img {
-    height: 4%;
+    height: 5%;
   }
   main {
     width: 67%;
@@ -305,6 +318,9 @@ h1 {
     .sideBar div i,
     label {
       font-size: 15px;
+    }
+    .sideBar img {
+      height: 15%;
     }
     .PresentForm {
       width: 80%;
@@ -363,6 +379,9 @@ h1 {
       @media screen and (max-width: 425px) {
         main {
           width: 90%;
+        }
+        .menu-btn {
+          margin-left: -20px;
         }
         @media screen and (max-width: 320px) {
           main {
