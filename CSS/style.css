@@ -347,13 +347,16 @@ table {
 
 table th,
 table td {
-  border: 1px solid #a5a5a5;
+  border-right: 1px solid #a5a5a5;
   padding: 8px;
   text-align: center;
+}table th:nth-last-child(1),
+table td:nth-last-child(1) {
+  border-right:none;
 }
 
 table th {
-  border: 1px solid #6e6e6e;
+  border-right: 1px solid #6e6e6e;
   background-color: #a6a6a6;
   font-weight: 400;
 }
