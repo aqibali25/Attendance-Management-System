@@ -31,6 +31,12 @@ body {
   margin: 20px;
   border-radius: 10px;
 }
+.navbar .title {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-left: 40px;
+}
 .profile {
   display: flex;
   justify-content: center;
@@ -118,11 +124,6 @@ body {
   align-items: center;
   gap: 20px;
 }
-.sideBar img {
-  width: 80%;
-  height: 70px;
-  margin: 20px 0;
-}
 .sideBar div {
   display: flex;
   justify-content: center;
@@ -132,6 +133,9 @@ body {
   height: 50px;
   cursor: pointer;
   border-radius: 10px;
+}
+#present {
+  margin-top: 80px;
 }
 .active {
   background-color: #675bef;
@@ -350,9 +354,10 @@ table td {
   border-right: 1px solid #a5a5a5;
   padding: 8px;
   text-align: center;
-}table th:nth-last-child(1),
+}
+table th:nth-last-child(1),
 table td:nth-last-child(1) {
-  border-right:none;
+  border-right: none;
 }
 
 table th {
