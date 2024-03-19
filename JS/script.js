@@ -1,8 +1,9 @@
 if (
   window.location.href.includes("index.html") ||
-  window.location.href === "https://aqibali25.github.io/ezitech-intern-test/" ||
   window.location.href ===
-    "https://aqibali25.github.io/ezitech-intern-test/index"
+    "https://aqibali25.github.io/Attendance-Management-System/" ||
+  window.location.href ===
+    "https://aqibali25.github.io/Attendance-Management-System/index"
 ) {
   checkLoginStatus();
 }
